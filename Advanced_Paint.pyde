@@ -83,13 +83,14 @@ def draw():
             line(pmouseX, pmouseY, mouseX, mouseY)
         
 def mouseClicked():
-    global rainbow, tri, sqr, circle, dim
+    global rainbow, tri, sqr, circle, dim, out, ins
     if mouseX <= 50 and mouseY <= 50:
         rainbow = False
         tri = False
         sqr = False
         circle = False
         stroke("#35668E")
+
 
     elif mouseX <= 50 and mouseY > 50 and mouseY <=100:
         rainbow = False
@@ -112,6 +113,7 @@ def mouseClicked():
         circle = False
         stroke("#9A95E3")
 
+
     elif mouseX <= 50 and mouseY > 200 and mouseY <=250:
         rainbow = False
         tri = False
@@ -133,14 +135,15 @@ def mouseClicked():
         tri = False
         sqr = False
         circle = False
-        stroke ("#62BF5A")
+        stroke("#62BF5A")
+
 
     elif mouseX >50 and mouseX <= 100 and mouseY > 50 and mouseY <=100 and mouseX <= 100:
         rainbow = False
         tri = False
         sqr = False
         circle = False
-        stroke ("#438393")
+        stroke("#438393")
 
     elif mouseX >50 and mouseX <= 100 and mouseY > 100 and mouseY <=150 and mouseX <= 100:
         rainbow = False
@@ -156,18 +159,21 @@ def mouseClicked():
         tri = False
         
     elif mouseX > 50 and mouseY > 250 and mouseY <= 300 and mouseX <= 100:
+        fill(0)
         tri = True
         sqr = False
         circle = False
         rainbow = False
         
     elif mouseX <= 50 and mouseY >300 and mouseY <=350:
+        fill(0)
         tri = False
         sqr = False
         circle = True
         rainbow = False
         
     elif mouseX > 50 and mouseY >300 and mouseY <=350 and mouseX <= 100:
+        fill(0)
         tri = False
         sqr = True
         circle = False
