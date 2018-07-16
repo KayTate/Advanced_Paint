@@ -40,11 +40,16 @@ def setup():
     rect(0,300,50,50)
     rect(0,350,50,50)
     rect(50,100,50,50)
-    rect(50,150,50,50)
-    rect(50,200,50,50)
+
+    
+    rect(50,250,50,50)
+    
     rect(50,250,50,50)
     rect(50,300,50,50)
     rect(50,350,50,50)
+    
+    fill("#644928")
+    rect(50,150,50,50)
     
     fill("#808589")
     ellipse(25, 325, 25, 25) 
@@ -57,8 +62,9 @@ def setup():
     text("Size", 65, 362)
     text("+", 74, 377)
     text("-", 75, 396)
-    text("Outline", 58, 180)
-    text("Fill", 67, 230)
+    
+    fill("#255F2F")
+    rect(50,200,50,50)
     
     fill("#62BF5A")
     rect(50,0,50,50)
@@ -79,11 +85,12 @@ def draw():
         elif circle == True:
             ellipse(pmouseX, pmouseY, dim,dim)
         else:
-            strokeWeight(2)
             line(pmouseX, pmouseY, mouseX, mouseY)
+    
         
 def mouseClicked():
-    global rainbow, tri, sqr, circle, dim, out, ins
+    global rainbow, tri, sqr, circle, dim
+    #Button 1.1
     if mouseX <= 50 and mouseY <= 50:
         rainbow = False
         tri = False
@@ -91,7 +98,7 @@ def mouseClicked():
         circle = False
         stroke("#35668E")
 
-
+    #Button 1.2
     elif mouseX <= 50 and mouseY > 50 and mouseY <=100:
         rainbow = False
         tri = False
@@ -99,6 +106,7 @@ def mouseClicked():
         circle = False
         stroke(0,0,0)
 
+    #Button 1.3
     elif mouseX <= 50 and mouseY > 100 and mouseY <=150:
         rainbow = False
         tri = False
@@ -106,6 +114,7 @@ def mouseClicked():
         circle = False
         stroke("#E395CD")
 
+    #Button 1.4
     elif mouseX <= 50 and mouseY > 150 and mouseY <=200:
         rainbow = False
         tri = False
@@ -113,7 +122,7 @@ def mouseClicked():
         circle = False
         stroke("#9A95E3")
 
-
+    #Button 1.5
     elif mouseX <= 50 and mouseY > 200 and mouseY <=250:
         rainbow = False
         tri = False
@@ -121,6 +130,22 @@ def mouseClicked():
         circle = False
         stroke("#95E1E3")
 
+    #Button 1.6
+    elif mouseX <=50 and mouseY > 250 and mouseY <= 300: 
+        rainbow = True
+        sqr = False
+        circle = False
+        tri = False
+        
+    #Button 1.7
+    elif mouseX <= 50 and mouseY >300 and mouseY <=350:
+        fill(0)
+        tri = False
+        sqr = False
+        circle = True
+        rainbow = False
+        
+    #Button 1.8
     elif mouseX <= 50 and mouseY >350:
         rainbow = False
         tri = False
@@ -130,6 +155,7 @@ def mouseClicked():
         noStroke()
         rect(101,0,550,400)
 
+    #Button 2.1
     elif mouseX >50 and mouseX <= 100 and mouseY <=50 and mouseX <= 100:
         rainbow = False
         tri = False
@@ -137,7 +163,7 @@ def mouseClicked():
         circle = False
         stroke("#62BF5A")
 
-
+    #Button 2.2
     elif mouseX >50 and mouseX <= 100 and mouseY > 50 and mouseY <=100 and mouseX <= 100:
         rainbow = False
         tri = False
@@ -145,33 +171,40 @@ def mouseClicked():
         circle = False
         stroke("#438393")
 
+    #Button 2.3
     elif mouseX >50 and mouseX <= 100 and mouseY > 100 and mouseY <=150 and mouseX <= 100:
         rainbow = False
         tri = False
         sqr = False
         circle = False
         stroke(random(255),random(255),random(255))
-
-    elif mouseX <=50 and mouseY > 250 and mouseY <= 300: 
-        rainbow = True
+        
+    #Button 2.4
+    elif mouseX >50 and mouseX <= 100 and mouseY > 150 and mouseY <=200 and mouseX <= 100:
+        rainbow = False
+        tri = False
         sqr = False
         circle = False
-        tri = False
+        stroke("#438393")
         
+    #Button 2.5 for fill
+    elif mouseX >50 and mouseX <= 100 and mouseY > 200 and mouseY <=250 and mouseX <= 100:
+        rainbow = False
+        tri = False
+        sqr = False
+        circle = False
+        stroke("#255F2F")
+        
+    #Button 2.6
     elif mouseX > 50 and mouseY > 250 and mouseY <= 300 and mouseX <= 100:
         fill(0)
         tri = True
         sqr = False
         circle = False
         rainbow = False
+        stroke("#644928")
         
-    elif mouseX <= 50 and mouseY >300 and mouseY <=350:
-        fill(0)
-        tri = False
-        sqr = False
-        circle = True
-        rainbow = False
-        
+    #Button 2.7
     elif mouseX > 50 and mouseY >300 and mouseY <=350 and mouseX <= 100:
         fill(0)
         tri = False
@@ -179,8 +212,10 @@ def mouseClicked():
         circle = False
         rainbow = False
         
+    #Button 2.8 pt. 1
     elif mouseX > 50 and mouseX <= 100 and mouseY >350 and mouseY <= 375:
         dim += 5
         
+    #Button 2.8 pt. 2
     elif mouseX > 50 and mouseX <= 100 and mouseY >375:
         dim += -5
