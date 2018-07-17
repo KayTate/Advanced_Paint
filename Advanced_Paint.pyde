@@ -1,3 +1,6 @@
+#Add eraser
+#Add outline and fill buttons
+
 rainbow = False
 tri = False
 circle = False
